@@ -60,6 +60,9 @@ const { NotImplementedError } = require('../extensions/index.js');
          j--;
        } else {
        let pos = (alphabet.indexOf(encryptedMessage[i]) % alphabet.length) - (alphabet.indexOf(key[j % key.length]));
+       if (pos === -1) {
+        str += alphabet.slice(pos);
+       }
        str += alphabet.slice(pos, pos + 1);
        }
      }
